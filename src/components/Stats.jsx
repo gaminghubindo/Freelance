@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { UMKM_CONFIG, ANIMATION_CONFIG } from "../config";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import Dekorasi from "./Dekorasi";
 
 /**
  * Hook Count-Up:
@@ -72,6 +73,9 @@ export default function Stats() {
       className={`stats-section reveal-section ${isVisible ? "is-visible" : ""}`}
       aria-label="Statistik Toko"
     >
+      {/* ELEMEN DEKORATIF LATAR BELAKANG STATISTIK */}
+      <Dekorasi section="stats" />
+
       <div className="container">
         <div className="stats-grid">
           {/* STAT 1: PELANGGAN PUAS */}

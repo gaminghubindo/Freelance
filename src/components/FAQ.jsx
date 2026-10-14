@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import Dekorasi from "./Dekorasi";
 
 /**
  * Komponen FAQ (Pertanyaan yang Sering Diajukan):
@@ -48,6 +49,9 @@ export default function FAQ() {
       id="faq"
       aria-label="Tanya Jawab"
     >
+      {/* ELEMEN DEKORATIF LATAR BELAKANG FAQ */}
+      <Dekorasi section="faq" />
+
       <div className="container">
         {/* HEADER SECTION DENGAN NAIK 40PX */}
         <div className={`section-header reveal-title-block ${isVisible ? "is-visible" : ""}`}>

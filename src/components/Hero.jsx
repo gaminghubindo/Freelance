@@ -1,13 +1,14 @@
 import React from "react";
 import { UMKM_CONFIG, ANIMATION_CONFIG, getWhatsAppUrl } from "../config";
 import Gambar from "./Gambar";
+import Dekorasi from "./Dekorasi";
 import { useScroll } from "../context/ScrollContext";
 
 /**
  * Komponen Hero:
  * - Parallax berlapis: teks bergerak sedikit lebih cepat lalu memudar halus saat scroll keluar.
  * - Gambar hero bergerak lebih lambat dari scroll (0.25x) memberikan sensasi kedalaman fisik.
- * - Elemen dekoratif latar belakang bergerak dengan kecepatan berbeda.
+ * - Elemen dekoratif latar belakang menggunakan komponen terpadu <Dekorasi section="hero" />.
  * - Otomatis dimatikan pada layar HP (<768px) dan prefers-reduced-motion.
  */
 export default function Hero() {
@@ -30,27 +31,10 @@ export default function Hero() {
     ? Math.min(scrollY * ANIMATION_CONFIG.parallaxHeroImage, 90)
     : 0;
 
-  // Parallax bentuk dekoratif latar
-  const deco1TranslateY = canAnimateParallax
-    ? scrollY * ANIMATION_CONFIG.parallaxDecoShape1
-    : 0;
-  const deco2TranslateY = canAnimateParallax
-    ? scrollY * ANIMATION_CONFIG.parallaxDecoShape2
-    : 0;
-
   return (
     <section className="section hero">
-      {/* ELEMEN DEKORATIF LATAR BELAKANG DENGAN PARALLAX BERBEDA (HALUS & TRANSPARAN) */}
-      <div
-        className="hero-deco-shape hero-deco-1"
-        style={{ transform: `translateY(${deco1TranslateY.toFixed(1)}px)` }}
-        aria-hidden="true"
-      />
-      <div
-        className="hero-deco-shape hero-deco-2"
-        style={{ transform: `translateY(${deco2TranslateY.toFixed(1)}px)` }}
-        aria-hidden="true"
-      />
+      {/* ELEMEN DEKORATIF LATAR BELAKANG TERPADU */}
+      <Dekorasi section="hero" />
 
       <div className="container hero-content">
         {/* KONTEN TEKS HERO DENGAN PARALLAX FADE OUT SAAT SCROLL */}

@@ -1,6 +1,7 @@
 import React from "react";
 import { DAFTAR_TESTIMONI } from "../data/testimoni";
 import Avatar from "./Avatar";
+import Dekorasi from "./Dekorasi";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 /**
@@ -79,9 +80,8 @@ function TestimoniCardItem({ item, index }) {
 /**
  * Komponen Testimoni:
  * - Judul section naik dengan fade saat scroll.
- * - Setiap kartu ulasan memiliki efek scroll-down yang nyata dan terasakan:
- *   Mengangkat naik sejauh 54-62px, scale membesar halus dari 0.92 ke 1,
- *   dan meluncur anggun dari sudut kolom masing-masing begitu digulir masuk layar.
+ * - Setiap kartu ulasan memiliki efek scroll-down yang nyata dan terasakan.
+ * - Elemen dekoratif latar belakang menggunakan <Dekorasi section="testimoni" />.
  */
 export default function Testimoni() {
   const [headerRef, isHeaderVisible] = useScrollReveal({ threshold: 0.15 });
@@ -92,6 +92,9 @@ export default function Testimoni() {
       id="testimoni"
       aria-label="Ulasan Pelanggan"
     >
+      {/* ELEMEN DEKORATIF LATAR BELAKANG TESTIMONI */}
+      <Dekorasi section="testimoni" />
+
       <div className="container">
         {/* HEADER SECTION DENGAN FADE & NAIK 40PX */}
         <div

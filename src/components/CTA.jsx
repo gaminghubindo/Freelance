@@ -1,6 +1,7 @@
 import React from "react";
 import { UMKM_CONFIG, getWhatsAppUrl } from "../config";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import Dekorasi from "./Dekorasi";
 
 /**
  * Komponen CTA (Call to Action Penutup):
@@ -16,6 +17,9 @@ export default function CTA() {
       className={`section cta-section reveal-section ${isVisible ? "is-visible" : ""}`}
       aria-label="Ajakan Bertindak"
     >
+      {/* ELEMEN DEKORATIF LATAR BELAKANG CTA */}
+      <Dekorasi section="cta" />
+
       <div className="container">
         <div className="cta-box">
           <h2>Siap Menikmati Seduhan Kopi Berkualitas?</h2>

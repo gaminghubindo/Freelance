@@ -130,12 +130,14 @@ a {
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
+  z-index: 1;
 }
 
 .section {
   padding-top: 64px;
   padding-bottom: 64px;
   position: relative;
+  overflow: hidden;
 }
 
 .section-header {
@@ -421,8 +423,20 @@ a {
   overflow: hidden;
 }
 
-/* Bentuk dekoratif latar belakang yang bergerak dengan kecepatan berbeda */
-.hero-deco-shape {
+/* =============================================================================
+ * ELEMEN DEKORATIF LATAR BELAKANG (LINGKARAN HALUS DENGAN PARALLAX RINGAN)
+ * ============================================================================= */
+.dekorasi-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.dekorasi-lingkaran {
   position: absolute;
   border-radius: var(--radius-full);
   pointer-events: none;
@@ -430,21 +444,8 @@ a {
   will-change: transform;
 }
 
-.hero-deco-1 {
-  width: 400px;
-  height: 400px;
-  top: -80px;
-  right: -100px;
-  background-color: rgba(47, 93, 80, 0.035);
-  border: 1px solid rgba(47, 93, 80, 0.04);
-}
-
-.hero-deco-2 {
-  width: 280px;
-  height: 280px;
-  bottom: 20px;
-  left: -90px;
-  background-color: rgba(47, 93, 80, 0.025);
+.dekorasi-outline {
+  background-color: transparent !important;
 }
 
 .hero-content {
@@ -587,6 +588,8 @@ a {
 .stats-section {
   padding-top: 24px;
   padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
 }
 
 .stats-grid {
@@ -1129,7 +1132,7 @@ a {
     transition: none !important;
   }
 
-  .hero-deco-shape,
+  .dekorasi-lingkaran,
   .hero-text-wrap,
   .hero-media-container,
   .keunggulan-media-inner {

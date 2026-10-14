@@ -1,5 +1,6 @@
 import React from "react";
 import Gambar from "./Gambar";
+import Dekorasi from "./Dekorasi";
 import { ANIMATION_CONFIG } from "../config";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useScroll } from "../context/ScrollContext";
@@ -97,6 +98,9 @@ export default function Keunggulan() {
       id="keunggulan"
       aria-label="Keunggulan Kami"
     >
+      {/* ELEMEN DEKORATIF LATAR BELAKANG KEUNGGULAN */}
+      <Dekorasi section="keunggulan" />
+
       <div className="container">
         {/* HEADER SECTION DENGAN NAIK 40PX */}
         <div className={`section-header reveal-title-block ${isVisible ? "is-visible" : ""}`}>
